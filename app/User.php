@@ -47,5 +47,9 @@ class User extends Authenticatable
     //    return route("$questions.show",$this->id);
         return '#';
     }
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 
 }
